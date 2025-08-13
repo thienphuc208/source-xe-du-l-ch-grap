@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cai Lậy Taxi - Reliable Transportation in Cai Lậy</title>
+    <link rel="icon" type="img/png" href="./Picture/ChatGPT Image 17_30_08 13 thg 8, 2025.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-slide {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            display: none;
+            animation: fade 1.5s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .active {
+            display: block;
+        }
+
+        .map-container {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        a.bg-blue-600 {
+            background-color: #0099ff;
+            /* Màu xanh Zalo */
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        a.bg-blue-600:hover {
+            background-color: #007acc;
+            /* Màu xanh đậm hơn khi hover */
+            transform: scale(1.1);
+        }
+
+        a.bg-blue-600 img {
+            width: 60%;
+            height: auto;
+            padding: 0;
+        }
+
+        .logo-nav {
+            max-height: 40px;
+            /* giữ chiều cao header */
+            transform: scale(1.3);
+            /* phóng to logo */
+            transform-origin: center;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="flex items-center space-x-2">
+                        <img src=".//Picture/ChatGPT Image 17_30_08 13 thg 8, 2025.png" alt="Cai Lậy Taxi"
+                            class="logo-nav">
+                        <span class="text-xl font-bold">Taxi Cai Lậy</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="hover:text-yellow-300 font-medium">Home</a>
+                    <a href="#services" class="hover:text-yellow-300 font-medium">Services</a>
+                    <a href="#pricing" class="hover:text-yellow-300 font-medium">Pricing</a>
+                    <a href="#booking" class="hover:text-yellow-300 font-medium">Book Now</a>
+                    <a href="#about" class="hover:text-yellow-300 font-medium">About Us</a>
+                    <a href="#contact" class="hover:text-yellow-300 font-medium">Contact</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-blue-900 px-4 pb-4">
+                <a href="#" class="block py-2 hover:text-yellow-300">Home</a>
+                <a href="#services" class="block py-2 hover:text-yellow-300">Services</a>
+                <a href="#pricing" class="block py-2 hover:text-yellow-300">Pricing</a>
+                <a href="#booking" class="block py-2 hover:text-yellow-300">Book Now</a>
+                <a href="#about" class="block py-2 hover:text-yellow-300">About Us</a>
+                <a href="#contact" class="block py-2 hover:text-yellow-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slideshow -->
+    <div class="hero-slide relative flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Reliable Taxi Services in Cai Lậy</h1>
+            <p class="text-xl mb-8">24/7 transportation solutions with professional drivers</p>
+
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Where do you want to go?"
+                        class="w-full py-4 px-6 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button
+                        class="absolute right-2 top-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full">
+                        <i class="fas fa-search mr-2"></i> Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- Call Now Button -->
+            <div class="mt-8">
+                <a href="tel:+84763916878"
+                    class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg inline-flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now: 0763916878
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Info Section -->
+    <div id="about" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">About Cai Lậy District</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Cai Lậy is a district-level town in Tiền Giang Province, Vietnam. Located in the Mekong Delta
+                    region, it serves as an important transportation hub connecting various provinces. Our taxi services
+                    cover all areas within Cai Lậy district and beyond, providing reliable transportation for both
+                    locals and visitors.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    We offer a comprehensive range of transportation services to meet all your needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-blue-700 flex items-center justify-center">
+                        <i class="fas fa-city text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">In-District Taxi</h3>
+                        <p class="text-gray-600 mb-4">Quick and affordable transportation within Cai Lậy district</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">From 50,000 VND</span>
+                            <button class="add-to-cart bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                                data-service="In-District Taxi" data-price="50000">
+                                <i class="fas fa-cart-plus mr-2"></i> Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">In-Province Taxi</h3>
+                        <p class="text-gray-600 mb-4">Travel anywhere within Tiền Giang province</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">From 100,000 VND</span>
+                            <button class="add-to-cart bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                                data-service="In-Province Taxi" data-price="100000">
+                                <i class="fas fa-cart-plus mr-2"></i> Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-purple-600 flex items-center justify-center">
+                        <i class="fas fa-plane-departure text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Airport Transfers</h3>
+                        <p class="text-gray-600 mb-4">Reliable transfers to/from Tân Sơn Nhất Airport</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">From 1,200,000 VND</span>
+                            <button class="add-to-cart bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                                data-service="Airport Transfers" data-price="1200000">
+                                <i class="fas fa-cart-plus mr-2"></i> Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-road text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Inter-Province Travel</h3>
+                        <p class="text-gray-600 mb-4">Travel between provinces in the Mekong Delta</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">From 800,000 VND</span>
+                            <button class="add-to-cart bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                                data-service="Inter-Province Travel" data-price="800000">
+                                <i class="fas fa-cart-plus mr-2"></i> Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-car-side text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Long-Distance Rental</h3>
+                        <p class="text-gray-600 mb-4">Daily or weekly car rental with driver</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">From 1,500,000 VND/day</span>
+                            <button class="add-to-cart bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                                data-service="Long-Distance Rental" data-price="1500000">
+                                <i class="fas fa-cart-plus mr-2"></i> Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-pink-600 flex items-center justify-center">
+                        <i class="fas fa-rings-wedding text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Wedding Cars</h3>
+                        <p class="text-gray-600 mb-4">Luxury vehicles for your special day</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-bold">From 2,000,000 VND</span>
+                            <button class="add-to-cart bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                                data-service="Wedding Cars" data-price="2000000">
+                                <i class="fas fa-cart-plus mr-2"></i> Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Section -->
+    <div id="booking" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Book Your Ride</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Fill out the form below to book your taxi service. Our team will confirm your booking shortly.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Booking Form -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Booking Form</h3>
+
+                    <form id="booking-form">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="email">Email (optional)</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="service">Service Type</label>
+                            <select id="service"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                                <option value="">Select a service</option>
+                                <option value="In-District Taxi">In-District Taxi</option>
+                                <option value="In-Province Taxi">In-Province Taxi</option>
+                                <option value="Airport Transfers">Airport Transfers</option>
+                                <option value="Inter-Province Travel">Inter-Province Travel</option>
+                                <option value="Long-Distance Rental">Long-Distance Rental</option>
+                                <option value="Wedding Cars">Wedding Cars</option>
+                                <option value="Tourist Car Rental">Tourist Car Rental</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="vehicle">Vehicle Type</label>
+                            <select id="vehicle"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                                <option value="">Select vehicle</option>
+                                <option value="4-seater">4-seater Sedan</option>
+                                <option value="7-seater">7-seater SUV</option>
+                                <option value="16-seater">16-seater Minivan</option>
+                                <option value="Luxury">Luxury Vehicle</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="pickup">Pickup Location</label>
+                            <input type="text" id="pickup"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="destination">Destination</label>
+                            <input type="text" id="destination"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="date">Pickup Date & Time</label>
+                            <input type="datetime-local" id="date"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="notes">Special Requests</label>
+                            <textarea id="notes" rows="3"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg">
+                            <i class="fas fa-paper-plane mr-2"></i> Submit Booking
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Your Booking Summary</h3>
+
+                    <div id="cart-items" class="mb-6">
+                        <p class="text-gray-500 italic">No services selected yet</p>
+                    </div>
+
+                    <div class="border-t pt-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Subtotal:</span>
+                            <span id="subtotal">0 VND</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Service Fee:</span>
+                            <span>50,000 VND</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-lg">
+                            <span>Total:</span>
+                            <span id="total">50,000 VND</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-3">Payment Methods</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="border rounded-lg p-3 text-center">
+                                <i class="fas fa-money-bill-wave text-green-500 text-2xl mb-2"></i>
+                                <p>Cash</p>
+                            </div>
+                            <div class="border rounded-lg p-3 text-center">
+                                <i class="fas fa-credit-card text-blue-500 text-2xl mb-2"></i>
+                                <p>Bank Transfer</p>
+                            </div>
+                            <div class="border rounded-lg p-3 text-center">
+                                <i class="fab fa-zalo text-blue-600 text-2xl mb-2"></i>
+                                <p>Zalo Pay</p>
+                            </div>
+                            <div class="border rounded-lg p-3 text-center">
+                                <i class="fas fa-mobile-alt text-purple-500 text-2xl mb-2"></i>
+                                <p>Momo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-yellow-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    Your booking will be confirmed within 15 minutes. For urgent requests, please call
+                                    our hotline.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map and Contact Section -->
+    <div id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Find Us</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Visit our office or contact us for any inquiries
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Map -->
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841855038403!2d105.7689053152875!3d10.029933992822365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51a9b9d1%3A0x5a1a394b1c53a5b0!2sCai%20L%E1%BA%ADy%20District%2C%20Tien%20Giang%2C%20Vietnam!5e0!3m2!1sen!2sus!4v1623456789012!5m2!1sen!2sus"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800">Address</h4>
+                                <p class="text-gray-600">Địa Chỉ 1 : Khu Di Tích Ấp Bắc, TT Cai Lậy, Tiền Giang <br>
+                                    Địa Chỉ 2 : 171 Lý Thường Kiệt,Tp Mỹ Tho , Tiền Giang <br>
+                                    Địa Chỉ 3 : TT Cái Bè, Huyện Cái Bè, Tiền Giang
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800">Phone</h4>
+                                <p class="text-gray-600">
+                                    <a href="tel:+84763916878" class="hover:text-blue-600">0763916878</a> (24/7
+                                    Hotline)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600">
+                                    <a href="mailto:info@tiendattaxi.com"
+                                        class="hover:text-blue-600">info@tiendattaxi.com</a>
+                                </p>
+                                <p class="text-gray-600">
+                                    <a href="mailto:booking@tiendattaxi.com"
+                                        class="hover:text-blue-600">booking@tiendattaxi.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800">Business Hours</h4>
+                                <p class="text-gray-600">Office: Mon-Sun 7:00 AM - 9:00 PM</p>
+                                <p class="text-gray-600">Taxi Service: 24/7</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                                <i class="fab fa-zalo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"
+                                        alt="Zalo">
+                                </i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-800">
+                                    Zalo</h4>
+                                <p class="text-gray-600">
+                                    <a href="https://zalo.me/0763916878" class="hover:text-blue-600">Taxi Cai Lậy</a>
+                                    (0763 916 878)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium text-gray-800 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="h-10 w-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="h-10 w-10 rounded-full bg-pink-600 text-white flex items-center justify-center hover:bg-pink-700">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="h-10 w-10 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="h-10 w-10 rounded-full bg-red-600 text-white flex items-center justify-center hover:bg-red-700">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Taxi</h3>
+                    <p class="text-gray-400">Providing reliable transportation services in Cai Lậy and surrounding areas
+                        since 2010.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#booking" class="text-gray-400 hover:text-white">Book Now</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">In-District Taxi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">In-Province Taxi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Airport Transfers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Inter-Province Travel</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Wedding Cars</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Taxi Cai Lậy. All rights reserved.</p>
+                <p class="mt-2">Business License: 41A8012345 - Issued by Tiền Giang Department of Transport</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div class="flex flex-col items-end space-y-3">
+            <a href="tel:+84763916878"
+                class="bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+                <i class="fas fa-phone-alt text-xl"></i>
+            </a>
+            <a href="https://zalo.me/84763916878"
+                class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+                <i class="fab fa-zalo text-xl"></i>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"
+                    alt="Zalo">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Cart Functionality
+        let cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function () {
+                const service = this.getAttribute('data-service');
+                const price = parseInt(this.getAttribute('data-price'));
+
+                // Check if service already in cart
+                const existingItem = cart.find(item => item.service === service);
+
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        service: service,
+                        price: price,
+                        quantity: 1
+                    });
+                }
+
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const totalElement = document.getElementById('total');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-500 italic">No services selected yet</p>';
+                subtotalElement.textContent = '0 VND';
+                totalElement.textContent = '50,000 VND';
+                return;
+            }
+
+            let subtotal = 0;
+            let cartHTML = '<div class="space-y-4">';
+
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+
+                cartHTML += `
+                    <div class="flex justify-between items-center border-b pb-3">
+                        <div>
+                            <h4 class="font-medium">${item.service}</h4>
+                            <p class="text-sm text-gray-500">${item.price.toLocaleString()} VND × ${item.quantity}</p>
+                        </div>
+                        <span class="font-medium">${(item.price * item.quantity).toLocaleString()} VND</span>
+                    </div>
+                `;
+            });
+
+            cartHTML += '</div>';
+            cartItems.innerHTML = cartHTML;
+
+            subtotalElement.textContent = subtotal.toLocaleString() + ' VND';
+            totalElement.textContent = (subtotal + 50000).toLocaleString() + ' VND';
+        }
+
+        // Booking Form Submission
+        document.getElementById('booking-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (cart.length === 0) {
+                alert('Please add at least one service to your booking');
+                return;
+            }
+
+            // In a real application, you would send this data to your server
+            const bookingData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                service: document.getElementById('service').value,
+                vehicle: document.getElementById('vehicle').value,
+                pickup: document.getElementById('pickup').value,
+                destination: document.getElementById('destination').value,
+                date: document.getElementById('date').value,
+                notes: document.getElementById('notes').value,
+                cart: cart,
+                total: document.getElementById('total').textContent
+            };
+
+            console.log('Booking submitted:', bookingData);
+
+            // Show success message
+            alert('Your booking has been submitted successfully! We will contact you shortly to confirm.');
+
+            // Reset form and cart
+            this.reset();
+            cart = [];
+            updateCart();
+        });
+
+        // Simple slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+
+            slides[slideIndex - 1].classList.add('active');
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        // Initialize slideshow if there are slides
+        if (slides.length > 0) {
+            showSlides();
+        }
+    </script>
+</body>
+
+</html>
