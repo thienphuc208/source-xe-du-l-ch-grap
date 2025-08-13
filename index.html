@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cai Lậy Taxi - Reliable Transportation in Cai Lậy</title>
+    <title>Taxi Cai Lậy - Gọi Taxi Nhanh 24/7</title>
+    <meta name="description"
+        content="Dịch vụ taxi Cai Lậy nhanh chóng, giá rẻ, gọi taxi 24/7. Liên hệ ngay để đặt xe an toàn và tiện lợi.">
+    <meta name="keywords" content="taxi Cai Lậy, taxi giá rẻ, đặt taxi Cai Lậy, taxi 24/7">
+    <meta name="robots" content="index, follow">
     <link rel="icon" type="img/png" href="./Picture/ChatGPT Image 17_30_08 13 thg 8, 2025.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -87,6 +91,25 @@
             transform: scale(1.3);
             /* phóng to logo */
             transform-origin: center;
+        }
+
+        .subtotal-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2563eb;
+            /* xanh đậm */
+        }
+
+        .total-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #dc2626;
+            /* đỏ đậm */
+            transition: transform 0.4s ease;
+        }
+
+        .total-label.flash {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -414,15 +437,12 @@
                             <span class="font-medium">Subtotal:</span>
                             <span id="subtotal">0 VND</span>
                         </div>
-                        <div class="flex justify-between mb-2">
-                            <span class="font-medium">Service Fee:</span>
-                            <span>50,000 VND</span>
-                        </div>
                         <div class="flex justify-between font-bold text-lg">
                             <span>Total:</span>
-                            <span id="total">50,000 VND</span>
+                            <span id="total">0 VND</span>
                         </div>
                     </div>
+
 
                     <div class="mt-8">
                         <h4 class="font-bold text-gray-800 mb-3">Payment Methods</h4>
@@ -526,12 +546,8 @@
                             <div class="ml-4">
                                 <h4 class="text-lg font-medium text-gray-800">Email</h4>
                                 <p class="text-gray-600">
-                                    <a href="mailto:info@tiendattaxi.com"
-                                        class="hover:text-blue-600">info@tiendattaxi.com</a>
-                                </p>
-                                <p class="text-gray-600">
-                                    <a href="mailto:booking@tiendattaxi.com"
-                                        class="hover:text-blue-600">booking@tiendattaxi.com</a>
+                                    <a href="mailto:tinnguyen.15051987@gmail.com"
+                                        class="hover:text-blue-600">tinnguyen.15051987@gmail.com</a>
                                 </p>
                             </div>
                         </div>
@@ -543,7 +559,7 @@
                             </div>
                             <div class="ml-4">
                                 <h4 class="text-lg font-medium text-gray-800">Business Hours</h4>
-                                <p class="text-gray-600">Office: Mon-Sun 7:00 AM - 9:00 PM</p>
+                                <p class="text-gray-600">Thứ 2 - Chủ Nhật 24/7</p>
                                 <p class="text-gray-600">Taxi Service: 24/7</p>
                             </div>
                         </div>
@@ -659,130 +675,7 @@
         </div>
     </div>
 
-    <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function () {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Cart Functionality
-        let cart = [];
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function () {
-                const service = this.getAttribute('data-service');
-                const price = parseInt(this.getAttribute('data-price'));
-
-                // Check if service already in cart
-                const existingItem = cart.find(item => item.service === service);
-
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push({
-                        service: service,
-                        price: price,
-                        quantity: 1
-                    });
-                }
-
-                updateCart();
-            });
-        });
-
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items');
-            const subtotalElement = document.getElementById('subtotal');
-            const totalElement = document.getElementById('total');
-
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p class="text-gray-500 italic">No services selected yet</p>';
-                subtotalElement.textContent = '0 VND';
-                totalElement.textContent = '50,000 VND';
-                return;
-            }
-
-            let subtotal = 0;
-            let cartHTML = '<div class="space-y-4">';
-
-            cart.forEach(item => {
-                subtotal += item.price * item.quantity;
-
-                cartHTML += `
-                    <div class="flex justify-between items-center border-b pb-3">
-                        <div>
-                            <h4 class="font-medium">${item.service}</h4>
-                            <p class="text-sm text-gray-500">${item.price.toLocaleString()} VND × ${item.quantity}</p>
-                        </div>
-                        <span class="font-medium">${(item.price * item.quantity).toLocaleString()} VND</span>
-                    </div>
-                `;
-            });
-
-            cartHTML += '</div>';
-            cartItems.innerHTML = cartHTML;
-
-            subtotalElement.textContent = subtotal.toLocaleString() + ' VND';
-            totalElement.textContent = (subtotal + 50000).toLocaleString() + ' VND';
-        }
-
-        // Booking Form Submission
-        document.getElementById('booking-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            if (cart.length === 0) {
-                alert('Please add at least one service to your booking');
-                return;
-            }
-
-            // In a real application, you would send this data to your server
-            const bookingData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                service: document.getElementById('service').value,
-                vehicle: document.getElementById('vehicle').value,
-                pickup: document.getElementById('pickup').value,
-                destination: document.getElementById('destination').value,
-                date: document.getElementById('date').value,
-                notes: document.getElementById('notes').value,
-                cart: cart,
-                total: document.getElementById('total').textContent
-            };
-
-            console.log('Booking submitted:', bookingData);
-
-            // Show success message
-            alert('Your booking has been submitted successfully! We will contact you shortly to confirm.');
-
-            // Reset form and cart
-            this.reset();
-            cart = [];
-            updateCart();
-        });
-
-        // Simple slideshow functionality
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-            }
-
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-
-            slides[slideIndex - 1].classList.add('active');
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-
-        // Initialize slideshow if there are slides
-        if (slides.length > 0) {
-            showSlides();
-        }
-    </script>
+   
 </body>
 
 </html>
