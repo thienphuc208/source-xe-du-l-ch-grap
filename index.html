@@ -111,6 +111,23 @@
         .total-label.flash {
             transform: scale(1.2);
         }
+
+        #car-rental {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* Khoảng cách đều nhau giữa các card */
+            gap: 60px;
+            margin-left: 130px;
+            margin-right: 100px;
+            padding: 20px;
+        }
+
+        #car-rental>div {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -164,7 +181,7 @@
             <p class="text-xl mb-8">Giải pháp vận chuyển 24/7 với đội ngũ tài xế chuyên nghiệp</p>
 
             <!-- Search Bar -->
-            <div class="max-w-2xl mx-auto">
+            <!-- <div class="max-w-2xl mx-auto">
                 <div class="relative">
                     <input type="text" placeholder="Bạn muốn đi đâu?"
                         class="w-full py-4 px-6 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -173,7 +190,7 @@
                         <i class="fas fa-search mr-2"></i> Tìm kiếm
                     </button>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Call Now Button -->
             <div class="mt-8">
@@ -323,444 +340,578 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Pricing Section -->
-    <div id="pricing" class="py-16 bg-red-50">
-        <section class="bg-green-200 py-10 border-t border-b border-green-300" style="border-radius: 20px;">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4">BẢNG GIÁ CƯỚC TAXI CAI LẬY</h2>
-        <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-        <p class="mb-6">Đội ngũ tài xế của chúng tôi đã sẵn sàng phục vụ bạn. Nhấn “Đặt xe” để chúng tôi đến đón bạn!</p>
+                <div class="container-fluid mt-3 d-flex justify-content-around" id="car-rental">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2024/06/images-38.jpg" alt="Taxi Cái Bè"
+                            class="w-full h-40 object-cover rounded-t-lg">
 
-        <table class="mx-auto border-collapse border border-gray-300 w-full max-w-6xl">
-            <thead style="  font-weight: bold; font-size: 24px;">
-                <tr>
-                    <th class="border border-gray-300 px-4 py-2">LOẠI XE</th>
-                    <th class="border border-gray-300 px-4 py-2">DƯỚI 30KM</th>
-                    <th class="border border-gray-300 px-4 py-2">TRÊN 30KM</th>
-                </tr>
-            </thead>
-            <tbody style=" font-weight: bold;"
-                <tr>
-                    <td class="border border-gray-300 px-4 py-2">Taxi 4 chỗ</td>
-                    <td class="border border-gray-300 px-4 py-2">
-                        14.500vnđ/ km
-                    </td>
-                    <td class="border border-gray-300 px-4 py-2">
-                        12.500vnđ/ km 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="border border-gray-300 px-4 py-2">Taxi 7 chỗ</td>
-                    <td class="border border-gray-300 px-4 py-2">
-                        16.500vnđ/ km
-                    </td>
-                    <td class="border border-gray-300 px-4 py-2">
-                        14.500vnđ/ km
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Cái Lậy</h3>
 
-    </div>
-
-
-    <!-- Booking Section -->
-    <div id="booking" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Đặt chuyến đi của bạn</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">
-                    Vui lòng điền vào mẫu dưới đây để đặt dịch vụ taxi. Đội ngũ của chúng tôi sẽ sớm xác nhận đặt chỗ của bạn.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Booking Form -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Đặt Vé</h3>
-
-                    <form id="booking-form">
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="name">Họ và Tên</label>
-                            <input type="text" id="name"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="phone">Số Điện Thoại</label>
-                            <input type="tel" id="phone"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="email">Email</label>
-                            <input type="email" id="email"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="service">Loại Dịch Vụ</label>
-                            <select id="service"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
-                                <option value="">Chọn dịch vụ</option>
-                                <option value="In-District Taxi">Taxi Nội Thành</option>
-                                <option value="In-Province Taxi">Taxi Trong Tỉnh</option>
-                                <option value="Airport Transfers">Đưa Đón Sân Bay</option>
-                                <option value="Inter-Province Travel">Đi Liên Tỉnh</option>
-                                <option value="Tourist Car Rental">Cho Thuê Xe Du Lịch</option>
-                                <option value="Wedding Cars">Xe Cưới</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="vehicle">Loại Xe</label>
-                            <select id="vehicle"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
-                                <option value="">Chọn loại xe</option>
-                                <option value="4-seater">4 chỗ</option>
-                                <option value="7-seater">7 chỗ</option>
-                                <option value="16-seater">16 chỗ</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="pickup">Địa Điểm Đón</label>
-                            <input type="text" id="pickup"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="destination">Điểm Đến</label>
-                            <input type="text" id="destination"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="date">Ngày & Giờ Đón</label>
-                            <input type="datetime-local" id="date"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2" for="notes">Yêu Cầu Đặc Biệt</label>
-                            <textarea id="notes" rows="3"
-                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg">
-                            <i class="fas fa-paper-plane mr-2"></i> Đặt
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Cart Summary -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Chi Tiết</h3>
-
-                    <div id="cart-items" class="mb-6">
-                        <p class="text-gray-500 italic">Chưa có dịch vụ nào được chọn</p>
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
                     </div>
 
-                    <div class="border-t pt-4">
-                        <div class="flex justify-between mb-2">
-                            <span class="font-medium">Tiền:</span>
-                            <span id="subtotal">0 VND</span>
-                        </div>
-                        <div class="flex justify-between font-bold text-lg">
-                            <span>Tổng cộng:</span>
-                            <span id="total">0 VND</span>
-                        </div>
+                    <!--car2-->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2024/06/xe-san-bay-1-300x200-1.jpeg"
+                            alt="Taxi Cái Bè" class="w-full h-40 object-cover rounded-t-lg">
+
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Cái Bè</h3>
+
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
                     </div>
 
+                    <!--car3-->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2013/07/xe-7-Cho.jpg" alt="Taxi Cái Bè"
+                            class="w-full h-40 object-cover rounded-t-lg">
 
-                    <div class="mt-8">
-                        <h4 class="font-bold text-gray-800 mb-3">Phương Thức Thanh Toán</h4>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="border rounded-lg p-3 text-center">
-                                <i class="fas fa-money-bill-wave text-green-500 text-2xl mb-2"></i>
-                                <p>Tiền mặt</p>
-                            </div>
-                            <div class="border rounded-lg p-3 text-center">
-                                <i class="fas fa-credit-card text-blue-500 text-2xl mb-2"></i>
-                                <p>Chuyển Khoản Ngân Hàng</p>
-                            </div>
-                            <div class="border rounded-lg p-3 text-center">
-                                <i class="fas fa-mobile-alt text-purple-500 text-2xl mb-2"></i>
-                                <p>Momo</p>
-                            </div>
-                        </div>
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Châu Thành</h3>
+
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
                     </div>
 
-                    <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-info-circle text-yellow-500"></i>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm text-yellow-700">
-                                    Vui lòng kiểm tra kỹ thông tin trước khi đặt. Chúng tôi sẽ liên hệ xác nhận
-                                    trong thời gian sớm nhất.
-                                </p>
-                            </div>
-                        </div>
+                    <!--car4-->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2024/06/xe4-cho.jpg" alt="Taxi Cái Bè"
+                            class="w-full h-40 object-cover rounded-t-lg">
+
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Tân Phước</h3>
+
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
+                    </div>
+
+                    <!--car5-->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2024/06/taxi-my-tho.jpg" alt="Taxi Cái Bè"
+                            class="w-full h-40 object-cover rounded-t-lg">
+
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Mỹ Tho</h3>
+
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
+                    </div>
+
+                    <!--car6-->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2024/06/taxi-cho-gao.jpg"
+                            alt="Taxi Cái Bè" class="w-full h-40 object-cover rounded-t-lg">
+
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Chợ Gạo</h3>
+
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
+                    </div>
+
+                    <!--car7-->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2024/06/taxi-300x225-1.webp"
+                            alt="Taxi Cái Bè" class="w-full h-40 object-cover rounded-t-lg">
+
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Tiền Giang</h3>
+
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
+                    </div>
+
+                    <!--car8-->
+                    <div class="bg-white rounded-lg shadow-md p-4 w-64 text-center">
+                        <!-- Ảnh dịch vụ -->
+                        <img src="https://xetaxicailay.com/wp-content/uploads/2024/06/4-cho-300x300-1-150x150-1.jpg"
+                            alt="Taxi Cái Bè" class="w-full h-40 object-cover rounded-t-lg">
+
+                        <!-- Tiêu đề -->
+                        <h3 class="text-blue-600 font-bold text-lg mt-3">Taxi Gò Công</h3>
+
+                        <!-- Nút gọi ngay -->
+                        <a href="tel:+84939227015"
+                            class="inline-block mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                            GỌI NGAY
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Map and Contact Section -->
-    <div id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tìm Chúng Tôi</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">
-                    Hãy đến văn phòng của chúng tôi hoặc liên hệ với chúng tôi để biết thêm thông tin
-                </p>
-            </div>
+        <!-- Pricing Section -->
+        <div id="pricing" class="py-16 bg-red-50">
+            <section class="bg-green-200 py-10 border-t border-b border-green-300" style="border-radius: 20px;">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-4">BẢNG GIÁ CƯỚC TAXI CAI LẬY</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                    <p class="mb-6">Đội ngũ tài xế của chúng tôi đã sẵn sàng phục vụ bạn. Nhấn “Đặt xe” để chúng tôi đến
+                        đón
+                        bạn!</p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Map -->
-                <div class="rounded-lg overflow-hidden shadow-lg">
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841855038403!2d105.7689053152875!3d10.029933992822365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51a9b9d1%3A0x5a1a394b1c53a5b0!2sCai%20L%E1%BA%ADy%20District%2C%20Tien%20Giang%2C%20Vietnam!5e0!3m2!1sen!2sus!4v1623456789012!5m2!1sen!2sus"
-                            allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+                    <table class="mx-auto border-collapse border border-gray-300 w-full max-w-6xl">
+                        <thead style="  font-weight: bold; font-size: 24px;">
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2">LOẠI XE</th>
+                                <th class="border border-gray-300 px-4 py-2">DƯỚI 30KM</th>
+                                <th class="border border-gray-300 px-4 py-2">TRÊN 30KM</th>
+                            </tr>
+                        </thead>
+                        <tbody style=" font-weight: bold;" <tr>
+                            <td class="border border-gray-300 px-4 py-2">Taxi 4 chỗ</td>
+                            <td class="border border-gray-300 px-4 py-2">
+                                14.500vnđ/ km
+                            </td>
+                            <td class="border border-gray-300 px-4 py-2">
+                                12.500vnđ/ km
+                            </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Taxi 7 chỗ</td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    16.500vnđ/ km
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    14.500vnđ/ km
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- Booking Section -->
+        <div id="booking" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Đặt chuyến đi của bạn</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Vui lòng điền vào mẫu dưới đây để đặt dịch vụ taxi. Đội ngũ của chúng tôi sẽ sớm xác nhận đặt
+                        chỗ
+                        của bạn.
+                    </p>
                 </div>
 
-                <!-- Contact Info -->
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Thông Tin Liên Hệ</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Booking Form -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Đặt Vé</h3>
 
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                <i class="fas fa-map-marker-alt"></i>
+                        <form id="booking-form">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="name">Họ và Tên</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Địa Chỉ</h4>
-                                <p class="text-gray-600">Địa Chỉ 1 : Khu Di Tích Ấp Bắc, TT Cai Lậy, Tiền Giang <br>
-                                    Địa Chỉ 2 : 171 Lý Thường Kiệt,Tp Mỹ Tho , Tiền Giang <br>
-                                    Địa Chỉ 3 : TT Cái Bè, Huyện Cái Bè, Tiền Giang
-                                </p>
-                            </div>
-                        </div>
 
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                <i class="fas fa-phone-alt"></i>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="phone">Số Điện Thoại</label>
+                                <input type="tel" id="phone"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Điện Thoại</h4>
-                                <p class="text-gray-600">
-                                    <a href="tel:+84939227015" class="hover:text-blue-600">0939227015</a> (24/7
-                                    Hotline)
-                                </p>
-                            </div>
-                        </div>
 
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
-                                <i class="fas fa-envelope"></i>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Email</h4>
-                                <p class="text-gray-600">
-                                    <a href="mailto:tinnguyen.15051987@gmail.com"
-                                        class="hover:text-blue-600">tinnguyen.15051987@gmail.com</a>
-                                </p>
-                            </div>
-                        </div>
 
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
-                                <i class="fas fa-clock"></i>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="service">Loại Dịch Vụ</label>
+                                <select id="service"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                                    <option value="">Chọn dịch vụ</option>
+                                    <option value="In-District Taxi">Taxi Nội Thành</option>
+                                    <option value="In-Province Taxi">Taxi Trong Tỉnh</option>
+                                    <option value="Airport Transfers">Đưa Đón Sân Bay</option>
+                                    <option value="Inter-Province Travel">Đi Liên Tỉnh</option>
+                                    <option value="Tourist Car Rental">Cho Thuê Xe Du Lịch</option>
+                                    <option value="Wedding Cars">Xe Cưới</option>
+                                </select>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">Giờ Làm Việc</h4>
-                                <p class="text-gray-600">Thứ 2 - Chủ Nhật 24/7</p>
-                                <p class="text-gray-600">Dịch Vụ Taxi: 24/7</p>
-                            </div>
-                        </div>
 
-                        <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
-                                <i class="fab fa-zalo">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"
-                                        alt="Zalo">
-                                </i>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="vehicle">Loại Xe</label>
+                                <select id="vehicle"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                                    <option value="">Chọn loại xe</option>
+                                    <option value="4-seater">4 chỗ</option>
+                                    <option value="7-seater">7 chỗ</option>
+                                    <option value="16-seater">16 chỗ</option>
+                                </select>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-800">
-                                    Zalo</h4>
-                                <p class="text-gray-600">
-                                    <a href="https://zalo.me/0939227015" class="hover:text-blue-600">Taxi Cai Lậy</a>
-                                    (0939 227 015)
-                                </p>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="pickup">Địa Điểm Đón</label>
+                                <input type="text" id="pickup"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
                             </div>
-                        </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="destination">Điểm Đến</label>
+                                <input type="text" id="destination"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="date">Ngày & Giờ Đón</label>
+                                <input type="datetime-local" id="date"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="notes">Yêu Cầu Đặc Biệt</label>
+                                <textarea id="notes" rows="3"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg">
+                                <i class="fas fa-paper-plane mr-2"></i> Đặt
+                            </button>
+                        </form>
                     </div>
 
-                    <div class="mt-8">
-                        <h4 class="text-lg font-medium text-gray-800 mb-4">Chúng Tôi</h4>
-                        <div class="flex space-x-4">
-                            <a href="#"
-                                class="h-10 w-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#"
-                                class="h-10 w-10 rounded-full bg-pink-600 text-white flex items-center justify-center hover:bg-pink-700">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#"
-                                class="h-10 w-10 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#"
-                                class="h-10 w-10 rounded-full bg-red-600 text-white flex items-center justify-center hover:bg-red-700">
-                                <i class="fab fa-youtube"></i>
-                            </a>
+                    <!-- Cart Summary -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Chi Tiết</h3>
+
+                        <div id="cart-items" class="mb-6">
+                            <p class="text-gray-500 italic">Chưa có dịch vụ nào được chọn</p>
+                        </div>
+
+                        <div class="border-t pt-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Tiền:</span>
+                                <span id="subtotal">0 VND</span>
+                            </div>
+                            <div class="flex justify-between font-bold text-lg">
+                                <span>Tổng cộng:</span>
+                                <span id="total">0 VND</span>
+                            </div>
+                        </div>
+
+
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-3">Phương Thức Thanh Toán</h4>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="border rounded-lg p-3 text-center">
+                                    <i class="fas fa-money-bill-wave text-green-500 text-2xl mb-2"></i>
+                                    <p>Tiền mặt</p>
+                                </div>
+                                <div class="border rounded-lg p-3 text-center">
+                                    <i class="fas fa-credit-card text-blue-500 text-2xl mb-2"></i>
+                                    <p>Chuyển Khoản Ngân Hàng</p>
+                                </div>
+                                <div class="border rounded-lg p-3 text-center">
+                                    <i class="fas fa-mobile-alt text-purple-500 text-2xl mb-2"></i>
+                                    <p>Momo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-info-circle text-yellow-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        Vui lòng kiểm tra kỹ thông tin trước khi đặt. Chúng tôi sẽ liên hệ xác nhận
+                                        trong thời gian sớm nhất.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Taxi</h3>
-                    <p class="text-gray-400">Cung cấp dịch vụ vận chuyển đáng tin cậy tại Cai Lậy và các khu vực lân cận.</p>
+        <!-- Map and Contact Section -->
+        <div id="contact" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Tìm Chúng Tôi</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Hãy đến văn phòng của chúng tôi hoặc liên hệ với chúng tôi để biết thêm thông tin
+                    </p>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Liên Kết Nhanh</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Trang Chủ</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Dịch vụ</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-white">Bảng Giá</a></li>
-                        <li><a href="#booking" class="text-gray-400 hover:text-white">Đặt Xe</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white">Liên Hệ</a></li>
-                    </ul>
-                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Map -->
+                    <div class="rounded-lg overflow-hidden shadow-lg">
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841855038403!2d105.7689053152875!3d10.029933992822365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51a9b9d1%3A0x5a1a394b1c53a5b0!2sCai%20L%E1%BA%ADy%20District%2C%20Tien%20Giang%2C%20Vietnam!5e0!3m2!1sen!2sus!4v1623456789012!5m2!1sen!2sus"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">In-District Taxi</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">In-Province Taxi</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Airport Transfers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Inter-Province Travel</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Wedding Cars</a></li>
-                    </ul>
-                </div>
+                    <!-- Contact Info -->
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Thông Tin Liên Hệ</h3>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Refund Policy</a></li>
-                    </ul>
-                </div>
-            </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">Địa Chỉ</h4>
+                                    <p class="text-gray-600">Địa Chỉ 1 : Khu Di Tích Ấp Bắc, TT Cai Lậy, Tiền Giang <br>
+                                        Địa Chỉ 2 : 171 Lý Thường Kiệt,Tp Mỹ Tho , Tiền Giang <br>
+                                        Địa Chỉ 3 : TT Cái Bè, Huyện Cái Bè, Tiền Giang
+                                    </p>
+                                </div>
+                            </div>
 
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Taxi Cai Lậy. All rights reserved.</p>
-                <p class="mt-2">Business License: 41A8012345 - Issued by Tiền Giang Department of Transport</p>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">Điện Thoại</h4>
+                                    <p class="text-gray-600">
+                                        <a href="tel:+84939227015" class="hover:text-blue-600">0939227015</a> (24/7
+                                        Hotline)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">
+                                        <a href="mailto:tinnguyen.15051987@gmail.com"
+                                            class="hover:text-blue-600">tinnguyen.15051987@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">Giờ Làm Việc</h4>
+                                    <p class="text-gray-600">Thứ 2 - Chủ Nhật 24/7</p>
+                                    <p class="text-gray-600">Dịch Vụ Taxi: 24/7</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                                    <i class="fab fa-zalo">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"
+                                            alt="Zalo">
+                                    </i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">
+                                        Zalo</h4>
+                                    <p class="text-gray-600">
+                                        <a href="https://zalo.me/0939227015" class="hover:text-blue-600">Taxi Cai
+                                            Lậy</a>
+                                        (0939 227 015)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-lg font-medium text-gray-800 mb-4">Chúng Tôi</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="h-10 w-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#"
+                                    class="h-10 w-10 rounded-full bg-pink-600 text-white flex items-center justify-center hover:bg-pink-700">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#"
+                                    class="h-10 w-10 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#"
+                                    class="h-10 w-10 rounded-full bg-red-600 text-white flex items-center justify-center hover:bg-red-700">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
 
-    <!-- Floating Call Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <div class="flex flex-col items-end space-y-3">
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Taxi</h3>
+                        <p class="text-gray-400">Cung cấp dịch vụ vận chuyển đáng tin cậy tại Cai Lậy và các khu vực lân
+                            cận.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Liên Kết Nhanh</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Trang Chủ</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white">Dịch vụ</a></li>
+                            <li><a href="#pricing" class="text-gray-400 hover:text-white">Bảng Giá</a></li>
+                            <li><a href="#booking" class="text-gray-400 hover:text-white">Đặt Xe</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Services</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">In-District Taxi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">In-Province Taxi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Airport Transfers</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Inter-Province Travel</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Wedding Cars</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; 2023 Taxi Cai Lậy. All rights reserved.</p>
+                    <p class="mt-2">Business License: 41A8012345 - Issued by Tiền Giang Department of Transport</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating Call Button -->
+        <div class="fixed bottom-6 right-6 z-50">
+            <div class="flex flex-col items-end space-y-3">
                 <a href="tel:+849227015"
                     class="bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
                     <i class="fas fa-phone-alt text-xl"></i>
                 </a>
-            <a href="https://zalo.me/84939227015"
-                class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
-                <i class="fab fa-zalo text-xl"></i>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"
-                    alt="Zalo">
-            </a>
+                <a href="https://zalo.me/84939227015"
+                    class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg flex items-center justify-center">
+                    <i class="fab fa-zalo text-xl"></i>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"
+                        alt="Zalo">
+                </a>
+            </div>
         </div>
-    </div>
 
-    <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button')?.addEventListener('click', function () {
-            const menu = document.getElementById('mobile-menu');
-            if (menu) menu.classList.toggle('hidden');
-        });
+        <script>
+            // Mobile Menu Toggle
+            document.getElementById('mobile-menu-button')?.addEventListener('click', function () {
+                const menu = document.getElementById('mobile-menu');
+                if (menu) menu.classList.toggle('hidden');
+            });
 
-        // Cart Functionality
-        let cart = [];
+            // Cart Functionality
+            let cart = [];
 
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function () {
-                const service = this.getAttribute('data-service');
-                // Không cần lấy giá nữa
-                const existingItem = cart.find(item => item.service === service);
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function () {
+                    const service = this.getAttribute('data-service');
+                    // Không cần lấy giá nữa
+                    const existingItem = cart.find(item => item.service === service);
 
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push({
-                        service: service,
-                        quantity: 1
-                    });
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            service: service,
+                            quantity: 1
+                        });
+                    }
+
+                    updateCart();
+                });
+            });
+
+            function updateCart() {
+                const cartItems = document.getElementById('cart-items');
+                const subtotalElement = document.getElementById('subtotal');
+                const totalElement = document.getElementById('total');
+
+                if (!cartItems || !subtotalElement || !totalElement) return;
+
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<p class="text-gray-500 italic">Chưa chọn dịch vụ nào</p>';
+                    subtotalElement.textContent = ' Liên hệ';
+                    totalElement.textContent = ' Liên hệ';
+                    return;
                 }
 
-                updateCart();
-            });
-        });
+                let cartHTML = '<div class="space-y-4">';
 
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items');
-            const subtotalElement = document.getElementById('subtotal');
-            const totalElement = document.getElementById('total');
-
-            if (!cartItems || !subtotalElement || !totalElement) return;
-
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p class="text-gray-500 italic">Chưa chọn dịch vụ nào</p>';
-                subtotalElement.textContent = ' Liên hệ';
-                totalElement.textContent = ' Liên hệ';
-                return;
-            }
-
-            let cartHTML = '<div class="space-y-4">';
-
-            cart.forEach((item, index) => {
-                cartHTML += `
+                cart.forEach((item, index) => {
+                    cartHTML += `
                 <div class="flex justify-between items-center border-b pb-2">
                     <div>
                         <p class="font-medium">${item.service}</p>
@@ -774,31 +925,63 @@
                     </div>
                 </div>
             `;
-            });
+                });
 
-            cartHTML += '</div>';
-            cartItems.innerHTML = cartHTML;
+                cartHTML += '</div>';
+                cartItems.innerHTML = cartHTML;
 
-            // Luôn hiển thị "Giá liên hệ"
-            subtotalElement.textContent = 'Liên hệ';
-            totalElement.textContent = 'Liên hệ';
-        }
+                // Luôn hiển thị "Giá liên hệ"
+                subtotalElement.textContent = 'Liên hệ';
+                totalElement.textContent = 'Liên hệ';
+            }
 
-        function changeQuantity(index, change) {
-            if (cart[index]) {
-                cart[index].quantity += change;
-                if (cart[index].quantity <= 0) {
-                    cart.splice(index, 1);
+            function changeQuantity(index, change) {
+                if (cart[index]) {
+                    cart[index].quantity += change;
+                    if (cart[index].quantity <= 0) {
+                        cart.splice(index, 1);
+                    }
+                    updateCart();
                 }
+            }
+
+            function removeItem(index) {
+                cart.splice(index, 1);
                 updateCart();
             }
-        }
 
-        function removeItem(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
-    </script>
+            // JS hiệu ứng rung khi load
+            document.addEventListener("DOMContentLoaded", () => {
+                const buttons = document.querySelectorAll(".fixed .flex a");
+                buttons.forEach((btn, index) => {
+                    setTimeout(() => {
+                        btn.classList.add("shake");
+                        setTimeout(() => btn.classList.remove("shake"), 1000);
+                    }, index * 500);
+                });
+            });
+
+            // CSS rung
+            const style = document.createElement("style");
+            style.textContent = `
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-2px, 2px) rotate(-2deg); }
+    40% { transform: translate(2px, -2px) rotate(2deg); }
+    60% { transform: translate(-2px, 2px) rotate(-2deg); }
+    80% { transform: translate(2px, -2px) rotate(2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+.shake {
+    animation: shake 0.6s ease-in-out;
+}
+`;
+            document.head.appendChild(style);
+
+
+
+
+        </script>
 
 
 
