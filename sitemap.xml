@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://xetaxicailay.id.vn/</loc>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://xetaxicailay.id.vn/gioi-thieu</loc>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://xetaxicailay.id.vn/lien-he</loc>
     <priority>0.8</priority>
   </url>
-
 </urlset>
