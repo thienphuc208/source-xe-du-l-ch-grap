@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xetaxicailay.id.vn/sitemap.xml
