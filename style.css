@@ -1,0 +1,315 @@
+:root {
+    --primary-color: #1e40af;
+    --secondary-color: #059669;
+    --accent-color: #f59e0b;
+}
+
+/* Hero Slideshow */
+.hero-slide {
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    transition: opacity 1s ease-in-out;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Classes */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Service Cards */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.service-card img {
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Navigation */
+nav {
+    backdrop-filter: blur(10px);
+    background: rgba(30, 64, 175, 0.95);
+}
+
+.logo-nav {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Statistics */
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonial-card {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card::before {
+    content: '"';
+    font-size: 100px;
+    color: #e5e7eb;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: serif;
+}
+
+/* Booking Form */
+.booking-step {
+    display: none;
+}
+
+.booking-step.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Progress Bar */
+.progress-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #6b7280;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: #3b82f6;
+    color: white;
+    transform: scale(1.1);
+}
+
+.progress-step.completed {
+    background: #10b981;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Floating Buttons */
+.floating-btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-slide {
+        height: 500px;
+    }
+
+    .hero-slide h1 {
+        font-size: 2rem;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-slide {
+        height: 400px;
+    }
+
+    .hero-slide h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Dark Mode */
+.dark {
+    background-color: #111827;
+    color: #f3f4f6;
+}
+
+.dark .bg-white {
+    background-color: #1f2937 !important;
+}
+
+.dark .text-gray-800 {
+    color: #f3f4f6 !important;
+}
+
+.dark .text-gray-600 {
+    color: #d1d5db !important;
+}
+
+/* Map Container */
+.map-container {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: none;
+}
+
+/* Price Table */
+.price-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.price-table th {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    color: white;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.price-table td {
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.3s ease;
+}
+
+.price-table tr:hover td {
+    background: #f8fafc;
+}
+
+.dark .price-table tr:hover td {
+    background: #374151;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
