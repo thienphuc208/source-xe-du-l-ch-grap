@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://xetaxicailay.id.vn/</loc>
-    <lastmod>2025-08-26</lastmod>
-    <priority>1.00</priority>
-  </url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>1.00</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/services.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.90</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/pricing.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.90</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/about.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.80</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/contact.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.80</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/privacy.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.60</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/terms.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.60</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/refund.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.60</priority>
+</url>
+
+<url>
+<loc>https://xetaxicailay.id.vn/cookies.html</loc>
+<lastmod>2026-03-10</lastmod>
+<priority>0.50</priority>
+</url>
+
 </urlset>
